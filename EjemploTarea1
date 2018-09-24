@@ -1,0 +1,56 @@
+//
+//Emjemplo para el analisis de codigo
+//communication, simplicity, and flexibility
+//Local Consequences, Duplication,Symmetry, Declarative Expression,Rate of Change: 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ejercicio01
+{
+    class Hombre
+    {
+        private string nombre;
+        private float dinero;
+        public void Inicio()
+        {
+            Console.WriteLine("---------BANCO BNB--------");
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("INGRESE SU NOMBRE: ");
+            nombre = Console.ReadLine();
+            Console.WriteLine("INGRESE SU MONTO DINERO; ");
+            dinero = float.Parse(Console.ReadLine());
+            Console.Clear();
+
+        }
+        public void Imprimir()
+        {
+            Console.WriteLine("---------BANCO BNB--------");
+            Console.WriteLine("-----------------------------");
+
+            Console.WriteLine("NOMBRE:    " + nombre);
+
+            if (dinero > 7000)
+            {
+                Console.WriteLine("USTED NO PUEDE EXCEDER EL MONTO DE S/ 7000");
+            }
+            else
+            {
+                Console.WriteLine("INVERSION: " + dinero);
+            }
+            Console.ReadLine();
+
+        }
+        static void Main(string[] args) 
+        {
+
+            Hombre per = new Hombre();
+            per.Inicio();
+            per.Imprimir();
+
+        }
+    }
+}
+ 
