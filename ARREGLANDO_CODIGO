@@ -1,0 +1,75 @@
+Es un programa bastante simple tiene como entrada dos parametros en la version  Original
+las nombres de las  Variables no son representativos son nombre y dinero 
+los nombres de las dos funciones tampoco una se llama Inicio y la otra Imprimir
+En Proceso de usar las lectura del Libro como base del cambio las variables y las funciones se cambia por los siguietestes nombres
+que a mi parecer representan mas el contexto del Programa
+nombreCliente que remplaza  a  nombre y montoDeposito remplaza a dinero
+los nombres de las funciones inicio se cambia por verificarDatos
+la funcion imprimir   se cambia por ImprimirDatos
+
+Punto de vista usado para este proposito:
+Nombres con sentido es una de las premisas del cap 2.
+los nombres de las variables y de las funciones deben representar la intencion del proceso.
+Comentarios
+en el codigo original no habia comentarios  y se lo mantiene de esa forma
+se trata de no desinformar al que va leer el codigo.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Simulador_Deposito
+{
+    class SimuladorDepositoBanco
+    {
+        private string nombreCliente;
+        private float montoDeposito;
+        private const int MONTO_MAXIMI_DEPOSITO = 7000;
+        public void VericarDatos()
+        {
+            Console.WriteLine("---------BANCO BNB--------");
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("INGRESE SU NOMBRE: ");
+            nombreCliente = Console.ReadLine();
+            Console.WriteLine("INGRESE SU MONTO DINERO; ");
+            montoDeposito = float.Parse(Console.ReadLine());
+            Console.Clear();
+
+        }
+        public void ImprimirDatos()
+        {
+            Console.WriteLine("---------BANCO BNB--------");
+            Console.WriteLine("-----------------------------");
+
+            Console.WriteLine("NOMBRE:    " + nombreCliente);
+
+            if (montoDeposito > MONTO_MAXIMI_DEPOSITO)
+            {
+                Console.WriteLine("USTED NO PUEDE EXCEDER EL MONTO DE S/ " + MONTO_MAXIMI_DEPOSITO);
+            }
+            else
+            {
+                Console.WriteLine("INVERSION: " + montoDeposito);
+            }
+            Console.ReadLine();
+
+        }
+        static void Main(string[] args)
+        {
+
+            SimuladorDepositoBanco cliente = new SimuladorDepositoBanco();
+            cliente.VericarDatos();
+            cliente.ImprimirDatos();
+
+        }
+    }
+}
+
+
+
+
+
